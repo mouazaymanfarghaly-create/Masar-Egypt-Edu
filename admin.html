@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مسار | مساعد إدارة المحتوى</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-page{max-width:1100px;margin:auto;padding:45px 5%}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.admin-box{background:#fff;border:1px solid #dfe6d8;border-radius:20px;padding:24px;margin-bottom:20px}.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field input,.field textarea,.field select{border:1px solid #ccd5c4;border-radius:10px;padding:10px;background:#fff;outline:0}.field textarea{min-height:90px;resize:vertical}.admin-list{display:grid;gap:12px}.admin-item{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px;border:1px solid #e0e6dc;border-radius:14px}.danger{border-color:#c98d8d;color:#8d3333;background:#fff}.success{background:#eaf1e3;color:#3f4f2f;padding:10px 14px;border-radius:10px;display:none;margin-bottom:15px}.help{font-size:13px;color:#6c746e}.code{direction:ltr;text-align:left;background:#202a1a;color:#eef3e8;padding:14px;border-radius:10px;overflow:auto;font-family:monospace;font-size:12px}
+    @media(max-width:700px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.admin-top{display:block}.admin-item{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="index.html"><span class="brand-mark">م</span><span>مسار</span></a>
+    <nav class="nav-links" style="display:flex"><a href="index.html">العودة للموقع</a></nav>
+  </header>
+
+  <main class="admin-page">
+    <div class="admin-top">
+      <div><span class="eyebrow">أداة مجانية</span><h1 style="margin:0;color:#27341f">مساعد إدارة المحتوى</h1></div>
+      <a class="btn btn-primary" href="index.html">فتح الموقع</a>
+    </div>
+
+    <div class="admin-box">
+      <h2>قبل أن تبدأ</h2>
+      <p class="help">هذه الصفحة لا تستخدم Database ولا خدمة مدفوعة. هي أداة محلية تساعدك على تجهيز بيانات المدرسين والدروس ثم تصدير ملف <b>teachers.js</b> واستبداله بالملف الموجود في المشروع.</p>
+      <p class="help">أي تعديل هنا محفوظ داخل متصفحك فقط حتى تضغط «تصدير». الموقع المنشور لن يتغير تلقائيًا لأننا لا نستخدم قاعدة بيانات.</p>
+    </div>
+
+    <div id="message" class="success"></div>
+
+    <section class="admin-box">
+      <h2>إضافة مدرس</h2>
+      <form id="teacherForm">
+        <div class="form-grid">
+          <label class="field"><span>اسم المدرس *</span><input id="name" required></label>
+          <label class="field"><span>المادة *</span><input id="subject" required></label>
+          <label class="field"><span>المرحلة</span><select id="stage"><option>الثانوية العامة المصرية</option><option>البكالوريا المصرية</option></select></label>
+          <label class="field"><span>الصفوف (افصل بينها بفاصلة)</span><input id="grades" placeholder="الصف الثاني الثانوي, الصف الثالث الثانوي"></label>
+          <label class="field"><span>رابط صورة المدرس</span><input id="image" type="url" placeholder="https://..."></label>
+          <label class="field"><span>رابط قناة YouTube</span><input id="youtubeChannel" type="url" placeholder="https://www.youtube.com/..."></label>
+          <label class="field full"><span>نبذة مختصرة</span><textarea id="bio"></textarea></label>
+        </div>
+        <button class="btn btn-primary" type="submit">إضافة المدرس</button>
+      </form>
+    </section>
+
+    <section class="admin-box">
+      <h2>المدرسون الحاليون</h2>
+      <div id="adminList" class="admin-list"></div>
+    </section>
+
+    <section class="admin-box">
+      <h2>إضافة درس لمدرس</h2>
+      <form id="lessonForm">
+        <div class="form-grid">
+          <label class="field"><span>المدرس *</span><select id="teacherSelect" required></select></label>
+          <label class="field"><span>عنوان الدرس *</span><input id="lessonTitle" required></label>
+          <label class="field full"><span>وصف الدرس</span><textarea id="lessonDescription"></textarea></label>
+          <label class="field"><span>رابط YouTube</span><input id="lessonUrl" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>
+          <label class="field"><span>رابط صورة مصغرة (اختياري)</span><input id="thumbnail" type="url"></label>
+        </div>
+        <button class="btn btn-primary" type="submit">إضافة الدرس</button>
+      </form>
+    </section>
+
+    <section class="admin-box">
+      <h2>تصدير البيانات</h2>
+      <p class="help">بعد إضافة كل المدرسين والدروس، اضغط الزر. سيتم تنزيل ملف <b>teachers.js</b>. استبدل الملف القديم بهذا الملف داخل مجلد الموقع ثم ارفع التحديث.</p>
+      <button class="btn btn-primary" id="exportBtn">تصدير teachers.js</button>
+      <button class="btn btn-outline" id="resetBtn">إعادة البيانات الأصلية</button>
+    </section>
+  </main>
+
+  <script src="teachers.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
