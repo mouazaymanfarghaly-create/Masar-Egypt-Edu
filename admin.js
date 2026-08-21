@@ -50,18 +50,36 @@ function render() {
   $("teacherSelect").innerHTML = data.map(t => `<option value="${t.id}">${esc(t.name)}</option>`).join("");
 }
 
-$("teacherForm").addEventListener("submit", e => {
+$("teacherForm").addEventListener($("teacherForm").addEventListener("submit", async e => {
   e.preventDefault();
+
   const teacher = {
-    id: Date.now(),
     name: $("name").value.trim(),
     subject: $("subject").value.trim(),
-    grades: $("grades").value.split(",").map(x=>x.trim()).filter(Boolean),
+    grades: $("grades").value.trim(),
     stage: $("stage").value,
     image: $("image").value.trim(),
     bio: $("bio").value.trim(),
-    youtubeChannel: $("youtubeChannel").value.trim(),
-    lessons: []
+    youtube_channel: $("youtubeChannel").value.trim()
+  };
+
+  const { data: newTeacher, error } = await supabaseClient
+    .from("teachers")
+    .insert(teacher)
+    .select()
+    .single();
+
+  if (error) {
+    console.error(error);
+    message("حدث خطأ أثناء إضافة المدرس.");
+    return;
+  }
+
+  data.push(newTeacher);
+  render();
+  e.target.reset();
+  message("تمت إضافة المدرس بنجاح.");
+});
   };
   data.push(teacher);
   save(); render(); e.target.reset(); message("تمت إضافة المدرس محليًا.");
