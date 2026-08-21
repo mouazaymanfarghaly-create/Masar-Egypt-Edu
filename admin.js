@@ -1,4 +1,24 @@
-let data = JSON.parse(localStorage.getItem("masar_admin_data") || "null") || JSON.parse(JSON.stringify(TEACHERS));
+let data = [];
+
+async function loadTeachers() {
+  const { data: teachers, error } = await supabaseClient
+    .from("teachers")
+    .select("*")
+    .order("name");
+
+  if (error) {
+    console.error(error);
+    message("حدث خطأ في تحميل المدرسين.");
+    return;
+  }
+
+  data = teachers || [];
+  render();
+}
+
+function save() {
+  // لم نعد نستخدم localStorage
+}
 
 const $ = id => document.getElementById(id);
 
