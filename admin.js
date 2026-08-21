@@ -2,67 +2,75 @@ let data = [];
 
 const $ = id => document.getElementById(id);
 
-function esc(v) {
-  return String(v ?? "").replace(/[&<>"']/g, c => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
-  }[c]);
+function esc(value) {
+  return String(value ?? "").replace(/[&<>"']/g, function (char) {
+    const map = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    };
+    return map[char];
+  });
 }
 
 function message(text) {
-  $("message").textContent = text;
-  $("message").style.display = "block";
+  const box = $("message");
 
-  setTimeout(() => {
-    $("message").style.display = "none";
+  if (!box) return;
+
+  box.textContent = text;
+  box.style.display = "block";
+
+  setTimeout(function () {
+    box.style.display = "none";
   }, 2600);
 }
 
 async function loadTeachers() {
-  const { data: teachers, error } = await supabaseClient
+  const result = await supabaseClient
     .from("teachers")
     .select("*")
     .order("name");
 
-  if (error) {
-    console.error(error);
+  if (result.error) {
+    console.error(result.error);
     message("حدث خطأ في تحميل المدرسين.");
     return;
   }
 
-  data = teachers || [];
+  data = result.data || [];
   render();
 }
 
 function render() {
-  $("adminList").innerHTML = data.length
-    ? data.map(t => `
-      <div class="admin-item">
-        <div>
-          <strong>${esc(t.name)}</strong><br>
-          <span class="help">${esc(t.subject)}</span>
-        </div>
+  const list = $("adminList");
+  const select = $("teacherSelect");
 
-        <button class="btn danger" onclick="deleteTeacher('${t.id}')">
-          حذف المدرس
-        </button>
-      </div>
-    `).join("")
+  if (!list || !select) return;
+
+  list.innerHTML = data.length
+    ? data.map(function (teacher) {
+        return `
+          <div class="admin-item">
+            <div>
+              <strong>${esc(teacher.name)}</strong><br>
+              <span class="help">${esc(teacher.subject)}</span>
+            </div>
+          </div>
+        `;
+      }).join("")
     : `<p class="help">لا يوجد مدرسون.</p>`;
 
-  $("teacherSelect").innerHTML = data.length
-    ? data.map(t => `
-      <option value="${t.id}">
-        ${esc(t.name)}
-      </option>
-    `).join("")
+  select.innerHTML = data.length
+    ? data.map(function (teacher) {
+        return `<option value="${teacher.id}">${esc(teacher.name)}</option>`;
+      }).join("")
     : `<option value="">لا يوجد مدرسون</option>`;
 }
 
-$("teacherForm").addEventListener("submit", async e => {
+$("teacherForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const teacher = {
@@ -76,57 +84,28 @@ $("teacherForm").addEventListener("submit", async e => {
   };
 
   if (!teacher.name || !teacher.subject) {
-    message("اكتب اسم المدرس والمادة أولًا.");
+    message("اكتب اسم المدرس والمادة.");
     return;
   }
 
-  const { data: newTeacher, error } = await supabaseClient
+  const result = await supabaseClient
     .from("teachers")
     .insert(teacher)
     .select()
     .single();
 
-  if (error) {
-    console.error(error);
+  if (result.error) {
+    console.error(result.error);
     message("حدث خطأ أثناء إضافة المدرس.");
     return;
   }
 
-  data.push(newTeacher);
+  data.push(result.data);
 
   render();
   e.target.reset();
 
   message("تمت إضافة المدرس بنجاح.");
-});
-
-window.deleteTeacher = async function(id) {
-  if (!confirm("هل تريد حذف هذا المدرس؟")) {
-    return;
-  }
-
-  const { error } = await supabaseClient
-    .from("teachers")
-    .delete()
-    .eq("id", id);
-
-  if (error) {
-    console.error(error);
-    message("حدث خطأ أثناء حذف المدرس.");
-    return;
-  }
-
-  data = data.filter(t => t.id !== id);
-
-  render();
-
-  message("تم حذف المدرس.");
-};
-
-$("lessonForm").addEventListener("submit", e => {
-  e.preventDefault();
-
-  message("إضافة الدروس سنربطها بقاعدة البيانات في الخطوة التالية.");
 });
 
 loadTeachers();
