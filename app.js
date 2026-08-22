@@ -165,4 +165,12 @@ document.querySelectorAll(".filter-btn").forEach(btn => btn.addEventListener("cl
 renderStats();
 populateFilters();
 renderTeachers();
+// Supabase
+const SUPABASE_URL = "https://meftmrgkqvdvurvrkrkc.supabase.co";
+const SUPABASE_KEY = "ضع_الـPublishable_Key_هنا";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 renderSubjects();
