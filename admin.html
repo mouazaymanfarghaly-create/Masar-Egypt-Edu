@@ -2,268 +2,163 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta
-    name="description"
-    content="مسار - منصة تعليمية لطلاب الثانوية العامة والبكالوريا المصرية">
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-  <title>مسار | طريقك نحو التفوق</title>
+  <title>
+    مسار | لوحة الإدارة
+  </title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <link
+    rel="stylesheet"
+    href="styles.css">
+
 </head>
+
 
 <body>
 
-<header class="navbar">
+<main class="section">
 
-  <a class="brand" href="#home">
-    <span class="brand-mark">م</span>
-    <span>مسار</span>
-  </a>
+  <div class="section-heading">
 
-  <nav class="nav-links">
-    <a href="#general">الثانوية العامة</a>
-    <a href="#baccalaureate">البكالوريا المصرية</a>
-    <a href="#teachers">المدرسون</a>
-    <a href="#subjects">المواد التعليمية</a>
-  </nav>
+    <div>
 
-  <div class="nav-search">
-    <label for="globalSearch" class="sr-only">ابحث</label>
+      <span class="eyebrow">
+        مسار
+      </span>
 
-    <input
-      id="globalSearch"
-      type="search"
-      placeholder="ابحث عن مدرس، مادة، درس أو موضوع..."
-    >
+      <h1>
+        لوحة الإدارة
+      </h1>
 
-    <span>⌕</span>
+    </div>
+
+
+    <a
+      class="btn btn-outline"
+      href="index.html">
+
+      العودة للمنصة
+
+    </a>
+
   </div>
 
-  <a
-    class="btn btn-outline"
-    href="admin.html">
-    الإدارة
-  </a>
 
-  <button
-    class="menu-btn"
-    id="menuBtn"
-    aria-label="فتح القائمة">
-    ☰
-  </button>
+  <!-- LOGIN -->
 
-</header>
+  <section
+    id="loginSection"
+    class="section alt">
 
+    <div class="section-heading">
 
-<main id="home">
+      <div>
 
-  <!-- HERO -->
+        <span class="eyebrow">
+          الإدارة
+        </span>
 
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        منصة تعليمية مصرية
-      </div>
-
-      <h1>مسار</h1>
-
-      <h2>طريقك نحو التفوق</h2>
-
-      <p class="credit">
-        مقدمة من م / معاذ أيمن عبد ربه
-      </p>
-
-      <p class="audience">
-        إلى جميع طلبة الجمهورية العربية المصرية
-      </p>
-
-      <p class="hero-copy">
-        منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها
-        طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.
-      </p>
-
-      <div class="hero-actions">
-
-        <a
-          class="btn btn-primary"
-          href="#general">
-          ابدأ التعلم
-        </a>
-
-        <a
-          class="btn btn-outline"
-          href="#teachers">
-          المدرسون
-        </a>
+        <h2>
+          تسجيل الدخول
+        </h2>
 
       </div>
-
-    </div>
-
-
-    <div class="hero-card">
-
-      <div class="hero-card-icon">
-        ✦
-      </div>
-
-      <h3>
-        تعلم في مكان واحد
-      </h3>
 
       <p>
-        مدرسون، مواد، دروس وروابط YouTube مرتبة بطريقة سهلة للطالب.
+        الدخول مخصص لفريق إدارة منصة مسار.
       </p>
 
-      <div class="mini-stats">
-
-        <div>
-          <strong id="teacherCount">0</strong>
-          <span>مدرس</span>
-        </div>
-
-        <div>
-          <strong id="lessonCount">0</strong>
-          <span>درس</span>
-        </div>
-
-        <div>
-          <strong id="subjectCount">0</strong>
-          <span>مادة</span>
-        </div>
-
-      </div>
-
     </div>
+
+
+    <form
+      id="loginForm"
+      style="max-width:500px;margin:auto;">
+
+      <label>
+        البريد الإلكتروني
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        required
+        placeholder="البريد الإلكتروني"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
+
+
+      <label>
+        كلمة المرور
+      </label>
+
+      <input
+        id="password"
+        type="password"
+        required
+        placeholder="كلمة المرور"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
+
+
+      <button
+        class="btn btn-primary"
+        type="submit">
+
+        تسجيل الدخول
+
+      </button>
+
+
+      <p
+        id="loginMessage"
+        style="margin-top:15px;">
+      </p>
+
+    </form>
 
   </section>
 
 
-  <!-- GENERAL -->
+  <!-- ADMIN -->
 
   <section
+    id="adminSection"
     class="section"
-    id="general">
+    hidden>
 
     <div class="section-heading">
 
       <div>
 
         <span class="eyebrow">
-          المسار الأول
+          الإدارة
         </span>
 
         <h2>
-          الثانوية العامة المصرية
+          إدارة منصة مسار
         </h2>
 
       </div>
 
-      <p>
-        اختر الصف للوصول للمحتوى المتاح.
-      </p>
-
-    </div>
-
-
-    <div class="path-grid">
 
       <button
-        class="path-card filter-btn"
-        data-grade="الصف الأول الثانوي">
+        id="logoutBtn"
+        class="btn btn-outline">
 
-        <span class="path-number">
-          01
-        </span>
-
-        <h3>
-          الصف الأول الثانوي
-        </h3>
-
-        <p>
-          دروس ومصادر تعليمية
-        </p>
+        تسجيل الخروج
 
       </button>
-
-
-      <button
-        class="path-card filter-btn"
-        data-grade="الصف الثاني الثانوي">
-
-        <span class="path-number">
-          02
-        </span>
-
-        <h3>
-          الصف الثاني الثانوي
-        </h3>
-
-        <p>
-          دروس ومصادر تعليمية
-        </p>
-
-      </button>
-
-
-      <button
-        class="path-card filter-btn"
-        data-grade="الصف الثالث الثانوي">
-
-        <span class="path-number">
-          03
-        </span>
-
-        <h3>
-          الصف الثالث الثانوي
-        </h3>
-
-        <p>
-          دروس ومصادر تعليمية
-        </p>
-
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- BACCALAUREATE -->
-
-  <section
-    class="section alt"
-    id="baccalaureate">
-
-    <div class="section-heading">
-
-      <div>
-
-        <span class="eyebrow">
-          المسار الثاني
-        </span>
-
-        <h2>
-          البكالوريا المصرية
-        </h2>
-
-      </div>
-
-      <p>
-        مساحة مخصصة للمحتوى الخاص بنظام البكالوريا المصرية.
-      </p>
 
     </div>
 
@@ -273,239 +168,452 @@
       <div>
 
         <span class="pill">
-          محتوى مستمر
+          لوحة الإدارة
         </span>
 
         <h3>
-          البكالوريا المصرية
+          إضافة مدرس جديد
         </h3>
 
         <p>
-          أضف المدرسين والدروس والفيديوهات من لوحة الإدارة.
+          المدرس الذي تضيفه هنا سيظهر مباشرة في منصة مسار.
         </p>
 
       </div>
 
-      <a
-        class="btn btn-primary"
-        href="#teachers">
-        استكشف المدرسين
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- TEACHERS -->
-
-  <section
-    class="section"
-    id="teachers">
-
-    <div class="section-heading">
-
-      <div>
-
-        <span class="eyebrow">
-          المحتوى
-        </span>
-
-        <h2>
-          المدرسون
-        </h2>
-
-      </div>
-
-      <p id="resultsText">
-        جاري تحميل المدرسين...
-      </p>
-
     </div>
 
 
-    <div class="filters">
+    <form
+      id="teacherForm"
+      style="max-width:650px;margin:35px auto;">
 
-      <select
-        id="subjectFilter"
-        aria-label="المادة">
+      <label>
+        اسم المدرس
+      </label>
 
-        <option value="">
-          كل المواد
-        </option>
+      <input
+        id="teacherName"
+        type="text"
+        required
+        placeholder="مثال: م / محمد صلاح"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
 
-      </select>
+
+      <label>
+        المادة
+      </label>
+
+      <input
+        id="teacherSubject"
+        type="text"
+        required
+        placeholder="مثال: الرياضيات"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
 
 
-      <select
-        id="gradeFilter"
-        aria-label="الصف">
+      <label>
+        الصف
+      </label>
 
-        <option value="">
-          كل الصفوف
-        </option>
+      <input
+        id="teacherGrades"
+        type="text"
+        required
+        placeholder="مثال: الصف الثاني الثانوي"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
 
-      </select>
+
+      <label>
+        المرحلة
+      </label>
+
+      <input
+        id="teacherStage"
+        type="text"
+        placeholder="مثال: الثانوية العامة"
+        style="width:100%;padding:12px;margin:8px 0 18px;">
+
+
+      <label>
+        رابط صورة المدرس
+      </label>
+
+      <input
+        id="teacherImage"
+        type="url"
+        placeholder="https://..."
+        style="width:100%;padding:12px;margin:8px 0 18px;">
+
+
+      <label>
+        نبذة عن المدرس
+      </label>
+
+      <textarea
+        id="teacherBio"
+        placeholder="نبذة قصيرة عن المدرس"
+        style="width:100%;padding:12px;margin:8px 0 18px;min-height:120px;">
+      </textarea>
+
+
+      <label>
+        رابط قناة YouTube
+      </label>
+
+      <input
+        id="teacherYoutube"
+        type="url"
+        placeholder="https://www.youtube.com/..."
+        style="width:100%;padding:12px;margin:8px 0 22px;">
 
 
       <button
-        class="btn btn-small btn-outline"
-        id="clearFilters">
+        class="btn btn-primary"
+        type="submit">
 
-        إلغاء الفلاتر
+        إضافة المدرس
 
       </button>
 
-    </div>
 
-
-    <div
-      class="teacher-grid"
-      id="teacherGrid">
-    </div>
-
-
-    <div
-      class="empty"
-      id="emptyState"
-      hidden>
-
-      <div class="empty-icon">
-        ⌕
-      </div>
-
-      <h3>
-        لم نجد نتائج
-      </h3>
-
-      <p>
-        جرّب كلمة بحث أو مادة أو صفًا مختلفًا.
+      <p
+        id="teacherMessage"
+        style="margin-top:18px;">
       </p>
 
-    </div>
-
-  </section>
-
-
-  <!-- SUBJECTS -->
-
-  <section
-    class="section alt"
-    id="subjects">
-
-    <div class="section-heading">
-
-      <div>
-
-        <span class="eyebrow">
-          استكشف
-        </span>
-
-        <h2>
-          المواد التعليمية
-        </h2>
-
-      </div>
-
-    </div>
-
-
-    <div
-      class="subject-grid"
-      id="subjectGrid">
-    </div>
-
-  </section>
-
-
-  <!-- CTA -->
-
-  <section class="section cta">
-
-    <div>
-
-      <span class="eyebrow">
-        مسار
-      </span>
-
-      <h2>
-        كل خطوة تعليمية تبدأ بمسار واضح.
-      </h2>
-
-      <p>
-        منصة تعليمية قابلة للتوسع لإضافة الاختبارات والملفات والواجبات.
-      </p>
-
-    </div>
-
-    <a
-      class="btn btn-light"
-      href="#teachers">
-      ابدأ من المدرسين
-    </a>
+    </form>
 
   </section>
 
 </main>
 
 
-<footer>
-
-  <div class="footer-brand">
-    <span class="brand-mark">م</span>
-    <strong>مسار</strong>
-  </div>
-
-  <p>
-    مقدمة من م / معاذ أيمن عبد ربه
-  </p>
-
-  <p>
-    إلى جميع طلبة الجمهورية العربية المصرية
-  </p>
-
-  <p class="footer-note">
-    منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.
-  </p>
-
-</footer>
-
-
-<!-- MODAL -->
-
-<div
-  class="modal"
-  id="teacherModal"
-  hidden>
-
-  <div
-    class="modal-backdrop"
-    data-close="true">
-  </div>
-
-  <article class="modal-card">
-
-    <button
-      class="modal-close"
-      id="modalClose"
-      aria-label="إغلاق">
-
-      ×
-
-    </button>
-
-    <div id="modalContent"></div>
-
-  </article>
-
-</div>
-
-
-<!-- SUPABASE -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<script src="app.js"></script>
+
+<script>
+
+const SUPABASE_URL =
+  "https://meftmrgkqvdvurvrkrkc.supabase.co";
+
+
+const SUPABASE_KEY =
+  "sb_publishable_IFLpHM_wfabV4dYtQXRTiA_CjFm-a5j";
+
+
+const supabaseClient =
+  supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+
+const loginForm =
+  document.getElementById(
+    "loginForm"
+  );
+
+
+const loginSection =
+  document.getElementById(
+    "loginSection"
+  );
+
+
+const adminSection =
+  document.getElementById(
+    "adminSection"
+  );
+
+
+const loginMessage =
+  document.getElementById(
+    "loginMessage"
+  );
+
+
+const logoutBtn =
+  document.getElementById(
+    "logoutBtn"
+  );
+
+
+const teacherForm =
+  document.getElementById(
+    "teacherForm"
+  );
+
+
+const teacherMessage =
+  document.getElementById(
+    "teacherMessage"
+  );
+
+
+async function checkSession() {
+
+  const {
+    data: {
+      session
+    }
+  } =
+    await supabaseClient
+      .auth
+      .getSession();
+
+
+  if (session) {
+
+    loginSection.hidden =
+      true;
+
+    adminSection.hidden =
+      false;
+
+  }
+
+}
+
+
+loginForm.addEventListener(
+  "submit",
+  async event => {
+
+    event.preventDefault();
+
+
+    loginMessage.textContent =
+      "جاري تسجيل الدخول...";
+
+
+    const email =
+      document
+        .getElementById("email")
+        .value
+        .trim();
+
+
+    const password =
+      document
+        .getElementById("password")
+        .value;
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .auth
+        .signInWithPassword({
+          email,
+          password
+        });
+
+
+    if (error) {
+
+      console.error(error);
+
+      loginMessage.textContent =
+        "فشل تسجيل الدخول: " +
+        error.message;
+
+      return;
+
+    }
+
+
+    if (data.session) {
+
+      loginSection.hidden =
+        true;
+
+      adminSection.hidden =
+        false;
+
+      loginMessage.textContent =
+        "";
+
+    }
+
+  }
+);
+
+
+logoutBtn.addEventListener(
+  "click",
+  async () => {
+
+    await supabaseClient
+      .auth
+      .signOut();
+
+
+    adminSection.hidden =
+      true;
+
+    loginSection.hidden =
+      false;
+
+    loginForm.reset();
+
+  }
+);
+
+
+teacherForm.addEventListener(
+  "submit",
+  async event => {
+
+    event.preventDefault();
+
+
+    teacherMessage.textContent =
+      "جاري إضافة المدرس...";
+
+
+    const {
+      data: {
+        session
+      }
+    } =
+      await supabaseClient
+        .auth
+        .getSession();
+
+
+    if (!session) {
+
+      teacherMessage.textContent =
+        "انتهت جلسة الدخول. سجل الدخول مرة أخرى.";
+
+      return;
+
+    }
+
+
+    const name =
+      document
+        .getElementById("teacherName")
+        .value
+        .trim();
+
+
+    const subject =
+      document
+        .getElementById("teacherSubject")
+        .value
+        .trim();
+
+
+    const gradesText =
+      document
+        .getElementById("teacherGrades")
+        .value
+        .trim();
+
+
+    const stage =
+      document
+        .getElementById("teacherStage")
+        .value
+        .trim();
+
+
+    const image =
+      document
+        .getElementById("teacherImage")
+        .value
+        .trim();
+
+
+    const bio =
+      document
+        .getElementById("teacherBio")
+        .value
+        .trim();
+
+
+    const youtubeChannel =
+      document
+        .getElementById("teacherYoutube")
+        .value
+        .trim();
+
+
+    const grades =
+      gradesText
+        .split(",")
+        .map(x => x.trim())
+        .filter(Boolean);
+
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from("teachers")
+        .insert({
+
+          name,
+
+          subject,
+
+          grades,
+
+          stage,
+
+          image,
+
+          bio,
+
+          youtube_channel:
+            youtubeChannel
+
+        })
+        .select()
+        .single();
+
+
+    if (error) {
+
+      console.error(
+        "INSERT ERROR:",
+        error
+      );
+
+
+      teacherMessage.textContent =
+        "حدث خطأ: " +
+        error.message;
+
+      return;
+
+    }
+
+
+    console.log(
+      "Teacher added:",
+      data
+    );
+
+
+    teacherMessage.textContent =
+      "تمت إضافة المدرس بنجاح ✅";
+
+
+    teacherForm.reset();
+
+  }
+);
+
+
+checkSession();
+
+</script>
 
 </body>
 </html>
