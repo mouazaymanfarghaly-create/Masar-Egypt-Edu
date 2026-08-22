@@ -16,17 +16,20 @@
       <span class="brand-mark">م</span>
       <span>مسار</span>
     </a>
+
     <nav class="nav-links">
       <a href="#general">الثانوية العامة</a>
       <a href="#baccalaureate">البكالوريا المصرية</a>
       <a href="#teachers">المدرسون</a>
       <a href="#subjects">المواد التعليمية</a>
     </nav>
+
     <div class="nav-search">
       <label for="globalSearch" class="sr-only">ابحث</label>
       <input id="globalSearch" type="search" placeholder="ابحث عن مدرس، مادة، درس أو موضوع...">
       <span>⌕</span>
     </div>
+
     <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
   </header>
 
@@ -38,16 +41,21 @@
         <h2>طريقك نحو التفوق</h2>
         <p class="credit">مقدمة من م / معاذ أيمن عبد ربه</p>
         <p class="audience">إلى جميع طلبة الجمهورية العربية المصرية</p>
-        <p class="hero-copy">منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.</p>
+        <p class="hero-copy">
+          منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.
+        </p>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#general">ابدأ التعلم</a>
           <a class="btn btn-outline" href="#teachers">المدرسون</a>
         </div>
       </div>
+
       <div class="hero-card">
         <div class="hero-card-icon">✦</div>
         <h3>تعلم في مكان واحد</h3>
         <p>مدرسون، مواد، دروس وروابط YouTube مرتبة بطريقة سهلة للطالب.</p>
+
         <div class="mini-stats">
           <div><strong id="teacherCount">0</strong><span>مدرس</span></div>
           <div><strong id="lessonCount">0</strong><span>درس</span></div>
@@ -64,15 +72,24 @@
         </div>
         <p>اختر الصف أو المادة للوصول للمحتوى المتاح.</p>
       </div>
+
       <div class="path-grid">
         <button class="path-card filter-btn" data-grade="الصف الأول الثانوي">
-          <span class="path-number">01</span><h3>الصف الأول الثانوي</h3><p>دروس ومصادر تعليمية</p>
+          <span class="path-number">01</span>
+          <h3>الصف الأول الثانوي</h3>
+          <p>دروس ومصادر تعليمية</p>
         </button>
+
         <button class="path-card filter-btn" data-grade="الصف الثاني الثانوي">
-          <span class="path-number">02</span><h3>الصف الثاني الثانوي</h3><p>دروس ومصادر تعليمية</p>
+          <span class="path-number">02</span>
+          <h3>الصف الثاني الثانوي</h3>
+          <p>دروس ومصادر تعليمية</p>
         </button>
+
         <button class="path-card filter-btn" data-grade="الصف الثالث الثانوي">
-          <span class="path-number">03</span><h3>الصف الثالث الثانوي</h3><p>دروس ومصادر تعليمية</p>
+          <span class="path-number">03</span>
+          <h3>الصف الثالث الثانوي</h3>
+          <p>دروس ومصادر تعليمية</p>
         </button>
       </div>
     </section>
@@ -85,12 +102,16 @@
         </div>
         <p>مساحة مخصصة للمحتوى الخاص بنظام البكالوريا المصرية.</p>
       </div>
+
       <div class="bacc-banner">
         <div>
           <span class="pill">قريبًا / حسب المحتوى المضاف</span>
           <h3>البكالوريا المصرية</h3>
-          <p>أضف المدرسين والدروس والفيديوهات من ملف البيانات بسهولة، وسيظهر المحتوى هنا تلقائيًا.</p>
+          <p>
+            أضف المدرسين والدروس والفيديوهات من ملف البيانات بسهولة، وسيظهر المحتوى هنا تلقائيًا.
+          </p>
         </div>
+
         <a class="btn btn-primary" href="#teachers">استكشف المدرسين</a>
       </div>
     </section>
@@ -103,12 +124,23 @@
         </div>
         <p id="resultsText">مدرسون ومصادر تعليمية مرتبة للطلاب.</p>
       </div>
+
       <div class="filters">
-        <select id="subjectFilter" aria-label="المادة"><option value="">كل المواد</option></select>
-        <select id="gradeFilter" aria-label="الصف"><option value="">كل الصفوف</option></select>
-        <button class="btn btn-small btn-outline" id="clearFilters">إلغاء الفلاتر</button>
+        <select id="subjectFilter" aria-label="المادة">
+          <option value="">كل المواد</option>
+        </select>
+
+        <select id="gradeFilter" aria-label="الصف">
+          <option value="">كل الصفوف</option>
+        </select>
+
+        <button class="btn btn-small btn-outline" id="clearFilters">
+          إلغاء الفلاتر
+        </button>
       </div>
+
       <div class="teacher-grid" id="teacherGrid"></div>
+
       <div class="empty" id="emptyState" hidden>
         <div class="empty-icon">⌕</div>
         <h3>لم نجد نتائج</h3>
@@ -123,6 +155,7 @@
           <h2>المواد التعليمية</h2>
         </div>
       </div>
+
       <div class="subject-grid" id="subjectGrid"></div>
     </section>
 
@@ -130,28 +163,43 @@
       <div>
         <span class="eyebrow">مسار</span>
         <h2>كل خطوة تعليمية تبدأ بمسار واضح.</h2>
-        <p>المنصة قابلة للتوسع مستقبلًا لإضافة اختبارات وملفات وواجبات وحسابات للطلاب.</p>
+        <p>
+          المنصة قابلة للتوسع مستقبلًا لإضافة اختبارات وملفات وواجبات وحسابات للطلاب.
+        </p>
       </div>
+
       <a class="btn btn-light" href="#teachers">ابدأ من المدرسين</a>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><span class="brand-mark">م</span><strong>مسار</strong></div>
+    <div class="footer-brand">
+      <span class="brand-mark">م</span>
+      <strong>مسار</strong>
+    </div>
+
     <p>مقدمة من م / معاذ أيمن عبد ربه</p>
     <p>إلى جميع طلبة الجمهورية العربية المصرية</p>
-    <p class="footer-note">منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.</p>
+    <p class="footer-note">
+      منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.
+    </p>
   </footer>
 
   <div class="modal" id="teacherModal" hidden>
     <div class="modal-backdrop" data-close="true"></div>
+
     <article class="modal-card">
       <button class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
       <div id="modalContent"></div>
     </article>
   </div>
 
+  <!-- ملفات المنصة -->
   <script src="teachers.js"></script>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <script src="app.js"></script>
 </body>
 </html>
