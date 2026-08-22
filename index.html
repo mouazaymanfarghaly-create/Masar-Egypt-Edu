@@ -1,209 +1,511 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مسار - منصة تعليمية لطلاب الثانوية العامة والبكالوريا المصرية">
+
+  <meta
+    name="description"
+    content="مسار - منصة تعليمية لطلاب الثانوية العامة والبكالوريا المصرية">
+
   <title>مسار | طريقك نحو التفوق</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="navbar">
-    <a class="brand" href="#home" aria-label="مسار">
-      <span class="brand-mark">م</span>
-      <span>مسار</span>
-    </a>
 
-    <nav class="nav-links">
-      <a href="#general">الثانوية العامة</a>
-      <a href="#baccalaureate">البكالوريا المصرية</a>
-      <a href="#teachers">المدرسون</a>
-      <a href="#subjects">المواد التعليمية</a>
-    </nav>
+<header class="navbar">
 
-    <div class="nav-search">
-      <label for="globalSearch" class="sr-only">ابحث</label>
-      <input id="globalSearch" type="search" placeholder="ابحث عن مدرس، مادة، درس أو موضوع...">
-      <span>⌕</span>
-    </div>
+  <a class="brand" href="#home">
+    <span class="brand-mark">م</span>
+    <span>مسار</span>
+  </a>
 
-    <a class="btn btn-outline admin-login-btn" href="admin.html">
-  دخول الإدارة
-</a>
+  <nav class="nav-links">
+    <a href="#general">الثانوية العامة</a>
+    <a href="#baccalaureate">البكالوريا المصرية</a>
+    <a href="#teachers">المدرسون</a>
+    <a href="#subjects">المواد التعليمية</a>
+  </nav>
 
-<button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
-  </header>
+  <div class="nav-search">
+    <label for="globalSearch" class="sr-only">ابحث</label>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">منصة تعليمية مصرية</div>
-        <h1>مسار</h1>
-        <h2>طريقك نحو التفوق</h2>
-        <p class="credit">مقدمة من م / معاذ أيمن عبد ربه</p>
-        <p class="audience">إلى جميع طلبة الجمهورية العربية المصرية</p>
-        <p class="hero-copy">
-          منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.
-        </p>
+    <input
+      id="globalSearch"
+      type="search"
+      placeholder="ابحث عن مدرس، مادة، درس أو موضوع..."
+    >
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#general">ابدأ التعلم</a>
-          <a class="btn btn-outline" href="#teachers">المدرسون</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="hero-card-icon">✦</div>
-        <h3>تعلم في مكان واحد</h3>
-        <p>مدرسون، مواد، دروس وروابط YouTube مرتبة بطريقة سهلة للطالب.</p>
-
-        <div class="mini-stats">
-          <div><strong id="teacherCount">0</strong><span>مدرس</span></div>
-          <div><strong id="lessonCount">0</strong><span>درس</span></div>
-          <div><strong id="subjectCount">0</strong><span>مادة</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="general">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">المسار الأول</span>
-          <h2>الثانوية العامة المصرية</h2>
-        </div>
-        <p>اختر الصف أو المادة للوصول للمحتوى المتاح.</p>
-      </div>
-
-      <div class="path-grid">
-        <button class="path-card filter-btn" data-grade="الصف الأول الثانوي">
-          <span class="path-number">01</span>
-          <h3>الصف الأول الثانوي</h3>
-          <p>دروس ومصادر تعليمية</p>
-        </button>
-
-        <button class="path-card filter-btn" data-grade="الصف الثاني الثانوي">
-          <span class="path-number">02</span>
-          <h3>الصف الثاني الثانوي</h3>
-          <p>دروس ومصادر تعليمية</p>
-        </button>
-
-        <button class="path-card filter-btn" data-grade="الصف الثالث الثانوي">
-          <span class="path-number">03</span>
-          <h3>الصف الثالث الثانوي</h3>
-          <p>دروس ومصادر تعليمية</p>
-        </button>
-      </div>
-    </section>
-
-    <section class="section alt" id="baccalaureate">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">المسار الثاني</span>
-          <h2>البكالوريا المصرية</h2>
-        </div>
-        <p>مساحة مخصصة للمحتوى الخاص بنظام البكالوريا المصرية.</p>
-      </div>
-
-      <div class="bacc-banner">
-        <div>
-          <span class="pill">قريبًا / حسب المحتوى المضاف</span>
-          <h3>البكالوريا المصرية</h3>
-          <p>
-            أضف المدرسين والدروس والفيديوهات من ملف البيانات بسهولة، وسيظهر المحتوى هنا تلقائيًا.
-          </p>
-        </div>
-
-        <a class="btn btn-primary" href="#teachers">استكشف المدرسين</a>
-      </div>
-    </section>
-
-    <section class="section" id="teachers">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">المحتوى</span>
-          <h2>المدرسون</h2>
-        </div>
-        <p id="resultsText">مدرسون ومصادر تعليمية مرتبة للطلاب.</p>
-      </div>
-
-      <div class="filters">
-        <select id="subjectFilter" aria-label="المادة">
-          <option value="">كل المواد</option>
-        </select>
-
-        <select id="gradeFilter" aria-label="الصف">
-          <option value="">كل الصفوف</option>
-        </select>
-
-        <button class="btn btn-small btn-outline" id="clearFilters">
-          إلغاء الفلاتر
-        </button>
-      </div>
-
-      <div class="teacher-grid" id="teacherGrid"></div>
-
-      <div class="empty" id="emptyState" hidden>
-        <div class="empty-icon">⌕</div>
-        <h3>لم نجد نتائج</h3>
-        <p>جرّب كلمة بحث أو مادة أو صفًا مختلفًا.</p>
-      </div>
-    </section>
-
-    <section class="section alt" id="subjects">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">استكشف</span>
-          <h2>المواد التعليمية</h2>
-        </div>
-      </div>
-
-      <div class="subject-grid" id="subjectGrid"></div>
-    </section>
-
-    <section class="section cta">
-      <div>
-        <span class="eyebrow">مسار</span>
-        <h2>كل خطوة تعليمية تبدأ بمسار واضح.</h2>
-        <p>
-          المنصة قابلة للتوسع مستقبلًا لإضافة اختبارات وملفات وواجبات وحسابات للطلاب.
-        </p>
-      </div>
-
-      <a class="btn btn-light" href="#teachers">ابدأ من المدرسين</a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-brand">
-      <span class="brand-mark">م</span>
-      <strong>مسار</strong>
-    </div>
-
-    <p>مقدمة من م / معاذ أيمن عبد ربه</p>
-    <p>إلى جميع طلبة الجمهورية العربية المصرية</p>
-    <p class="footer-note">
-      منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.
-    </p>
-  </footer>
-
-  <div class="modal" id="teacherModal" hidden>
-    <div class="modal-backdrop" data-close="true"></div>
-
-    <article class="modal-card">
-      <button class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
-      <div id="modalContent"></div>
-    </article>
+    <span>⌕</span>
   </div>
 
-  <!-- ملفات المنصة -->
-  <script src="teachers.js"></script>
+  <a
+    class="btn btn-outline"
+    href="admin.html">
+    الإدارة
+  </a>
 
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="فتح القائمة">
+    ☰
+  </button>
 
-  <script src="app.js"></script>
+</header>
+
+
+<main id="home">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        منصة تعليمية مصرية
+      </div>
+
+      <h1>مسار</h1>
+
+      <h2>طريقك نحو التفوق</h2>
+
+      <p class="credit">
+        مقدمة من م / معاذ أيمن عبد ربه
+      </p>
+
+      <p class="audience">
+        إلى جميع طلبة الجمهورية العربية المصرية
+      </p>
+
+      <p class="hero-copy">
+        منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها
+        طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="#general">
+          ابدأ التعلم
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="#teachers">
+          المدرسون
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="hero-card-icon">
+        ✦
+      </div>
+
+      <h3>
+        تعلم في مكان واحد
+      </h3>
+
+      <p>
+        مدرسون، مواد، دروس وروابط YouTube مرتبة بطريقة سهلة للطالب.
+      </p>
+
+      <div class="mini-stats">
+
+        <div>
+          <strong id="teacherCount">0</strong>
+          <span>مدرس</span>
+        </div>
+
+        <div>
+          <strong id="lessonCount">0</strong>
+          <span>درس</span>
+        </div>
+
+        <div>
+          <strong id="subjectCount">0</strong>
+          <span>مادة</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GENERAL -->
+
+  <section
+    class="section"
+    id="general">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المسار الأول
+        </span>
+
+        <h2>
+          الثانوية العامة المصرية
+        </h2>
+
+      </div>
+
+      <p>
+        اختر الصف للوصول للمحتوى المتاح.
+      </p>
+
+    </div>
+
+
+    <div class="path-grid">
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الأول الثانوي">
+
+        <span class="path-number">
+          01
+        </span>
+
+        <h3>
+          الصف الأول الثانوي
+        </h3>
+
+        <p>
+          دروس ومصادر تعليمية
+        </p>
+
+      </button>
+
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الثاني الثانوي">
+
+        <span class="path-number">
+          02
+        </span>
+
+        <h3>
+          الصف الثاني الثانوي
+        </h3>
+
+        <p>
+          دروس ومصادر تعليمية
+        </p>
+
+      </button>
+
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الثالث الثانوي">
+
+        <span class="path-number">
+          03
+        </span>
+
+        <h3>
+          الصف الثالث الثانوي
+        </h3>
+
+        <p>
+          دروس ومصادر تعليمية
+        </p>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACCALAUREATE -->
+
+  <section
+    class="section alt"
+    id="baccalaureate">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المسار الثاني
+        </span>
+
+        <h2>
+          البكالوريا المصرية
+        </h2>
+
+      </div>
+
+      <p>
+        مساحة مخصصة للمحتوى الخاص بنظام البكالوريا المصرية.
+      </p>
+
+    </div>
+
+
+    <div class="bacc-banner">
+
+      <div>
+
+        <span class="pill">
+          محتوى مستمر
+        </span>
+
+        <h3>
+          البكالوريا المصرية
+        </h3>
+
+        <p>
+          أضف المدرسين والدروس والفيديوهات من لوحة الإدارة.
+        </p>
+
+      </div>
+
+      <a
+        class="btn btn-primary"
+        href="#teachers">
+        استكشف المدرسين
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- TEACHERS -->
+
+  <section
+    class="section"
+    id="teachers">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المحتوى
+        </span>
+
+        <h2>
+          المدرسون
+        </h2>
+
+      </div>
+
+      <p id="resultsText">
+        جاري تحميل المدرسين...
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <select
+        id="subjectFilter"
+        aria-label="المادة">
+
+        <option value="">
+          كل المواد
+        </option>
+
+      </select>
+
+
+      <select
+        id="gradeFilter"
+        aria-label="الصف">
+
+        <option value="">
+          كل الصفوف
+        </option>
+
+      </select>
+
+
+      <button
+        class="btn btn-small btn-outline"
+        id="clearFilters">
+
+        إلغاء الفلاتر
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="teacher-grid"
+      id="teacherGrid">
+    </div>
+
+
+    <div
+      class="empty"
+      id="emptyState"
+      hidden>
+
+      <div class="empty-icon">
+        ⌕
+      </div>
+
+      <h3>
+        لم نجد نتائج
+      </h3>
+
+      <p>
+        جرّب كلمة بحث أو مادة أو صفًا مختلفًا.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUBJECTS -->
+
+  <section
+    class="section alt"
+    id="subjects">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          استكشف
+        </span>
+
+        <h2>
+          المواد التعليمية
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="subject-grid"
+      id="subjectGrid">
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="section cta">
+
+    <div>
+
+      <span class="eyebrow">
+        مسار
+      </span>
+
+      <h2>
+        كل خطوة تعليمية تبدأ بمسار واضح.
+      </h2>
+
+      <p>
+        منصة تعليمية قابلة للتوسع لإضافة الاختبارات والملفات والواجبات.
+      </p>
+
+    </div>
+
+    <a
+      class="btn btn-light"
+      href="#teachers">
+      ابدأ من المدرسين
+    </a>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-brand">
+    <span class="brand-mark">م</span>
+    <strong>مسار</strong>
+  </div>
+
+  <p>
+    مقدمة من م / معاذ أيمن عبد ربه
+  </p>
+
+  <p>
+    إلى جميع طلبة الجمهورية العربية المصرية
+  </p>
+
+  <p class="footer-note">
+    منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.
+  </p>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div
+  class="modal"
+  id="teacherModal"
+  hidden>
+
+  <div
+    class="modal-backdrop"
+    data-close="true">
+  </div>
+
+  <article class="modal-card">
+
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="إغلاق">
+
+      ×
+
+    </button>
+
+    <div id="modalContent"></div>
+
+  </article>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="app.js"></script>
+
 </body>
 </html>
