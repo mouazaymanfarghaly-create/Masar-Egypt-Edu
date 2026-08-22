@@ -1,267 +1,511 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>مسار | لوحة الإدارة</title>
+  <meta
+    name="description"
+    content="مسار - منصة تعليمية لطلاب الثانوية العامة والبكالوريا المصرية">
+
+  <title>مسار | طريقك نحو التفوق</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <main class="section">
+<header class="navbar">
 
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">مسار</span>
-        <h1>لوحة الإدارة</h1>
+  <a class="brand" href="#home">
+    <span class="brand-mark">م</span>
+    <span>مسار</span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="#general">الثانوية العامة</a>
+    <a href="#baccalaureate">البكالوريا المصرية</a>
+    <a href="#teachers">المدرسون</a>
+    <a href="#subjects">المواد التعليمية</a>
+  </nav>
+
+  <div class="nav-search">
+    <label for="globalSearch" class="sr-only">ابحث</label>
+
+    <input
+      id="globalSearch"
+      type="search"
+      placeholder="ابحث عن مدرس، مادة، درس أو موضوع..."
+    >
+
+    <span>⌕</span>
+  </div>
+
+  <a
+    class="btn btn-outline"
+    href="admin.html">
+    الإدارة
+  </a>
+
+  <button
+    class="menu-btn"
+    id="menuBtn"
+    aria-label="فتح القائمة">
+    ☰
+  </button>
+
+</header>
+
+
+<main id="home">
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        منصة تعليمية مصرية
       </div>
 
-      <a class="btn btn-outline" href="index.html">
-        العودة للمنصة
-      </a>
+      <h1>مسار</h1>
+
+      <h2>طريقك نحو التفوق</h2>
+
+      <p class="credit">
+        مقدمة من م / معاذ أيمن عبد ربه
+      </p>
+
+      <p class="audience">
+        إلى جميع طلبة الجمهورية العربية المصرية
+      </p>
+
+      <p class="hero-copy">
+        منصة تعليمية تجمع المحتوى والمصادر التعليمية التي يحتاجها
+        طلاب الثانوية العامة والبكالوريا المصرية في مكان واحد.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="#general">
+          ابدأ التعلم
+        </a>
+
+        <a
+          class="btn btn-outline"
+          href="#teachers">
+          المدرسون
+        </a>
+
+      </div>
+
     </div>
 
 
-    <!-- تسجيل الدخول -->
+    <div class="hero-card">
 
-    <section id="loginSection" class="section alt">
+      <div class="hero-card-icon">
+        ✦
+      </div>
 
-      <div class="section-heading">
+      <h3>
+        تعلم في مكان واحد
+      </h3>
+
+      <p>
+        مدرسون، مواد، دروس وروابط YouTube مرتبة بطريقة سهلة للطالب.
+      </p>
+
+      <div class="mini-stats">
+
         <div>
-          <span class="eyebrow">الإدارة</span>
-          <h2>تسجيل الدخول</h2>
+          <strong id="teacherCount">0</strong>
+          <span>مدرس</span>
         </div>
+
+        <div>
+          <strong id="lessonCount">0</strong>
+          <span>درس</span>
+        </div>
+
+        <div>
+          <strong id="subjectCount">0</strong>
+          <span>مادة</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GENERAL -->
+
+  <section
+    class="section"
+    id="general">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المسار الأول
+        </span>
+
+        <h2>
+          الثانوية العامة المصرية
+        </h2>
+
+      </div>
+
+      <p>
+        اختر الصف للوصول للمحتوى المتاح.
+      </p>
+
+    </div>
+
+
+    <div class="path-grid">
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الأول الثانوي">
+
+        <span class="path-number">
+          01
+        </span>
+
+        <h3>
+          الصف الأول الثانوي
+        </h3>
 
         <p>
-          الدخول مخصص لفريق إدارة منصة مسار.
+          دروس ومصادر تعليمية
         </p>
+
+      </button>
+
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الثاني الثانوي">
+
+        <span class="path-number">
+          02
+        </span>
+
+        <h3>
+          الصف الثاني الثانوي
+        </h3>
+
+        <p>
+          دروس ومصادر تعليمية
+        </p>
+
+      </button>
+
+
+      <button
+        class="path-card filter-btn"
+        data-grade="الصف الثالث الثانوي">
+
+        <span class="path-number">
+          03
+        </span>
+
+        <h3>
+          الصف الثالث الثانوي
+        </h3>
+
+        <p>
+          دروس ومصادر تعليمية
+        </p>
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACCALAUREATE -->
+
+  <section
+    class="section alt"
+    id="baccalaureate">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المسار الثاني
+        </span>
+
+        <h2>
+          البكالوريا المصرية
+        </h2>
+
       </div>
 
-      <form id="loginForm" style="max-width:500px;margin:auto;">
+      <p>
+        مساحة مخصصة للمحتوى الخاص بنظام البكالوريا المصرية.
+      </p>
 
-        <label for="email">
-          البريد الإلكتروني
-        </label>
-
-        <input
-          id="email"
-          type="email"
-          required
-          placeholder="البريد الإلكتروني"
-          style="width:100%;padding:12px;margin:8px 0 18px;"
-        >
+    </div>
 
 
-        <label for="password">
-          كلمة المرور
-        </label>
+    <div class="bacc-banner">
 
-        <input
-          id="password"
-          type="password"
-          required
-          placeholder="كلمة المرور"
-          style="width:100%;padding:12px;margin:8px 0 18px;"
-        >
+      <div>
 
+        <span class="pill">
+          محتوى مستمر
+        </span>
 
-        <button
-          class="btn btn-primary"
-          type="submit">
-          تسجيل الدخول
-        </button>
+        <h3>
+          البكالوريا المصرية
+        </h3>
 
-        <p
-          id="loginMessage"
-          style="margin-top:15px;">
+        <p>
+          أضف المدرسين والدروس والفيديوهات من لوحة الإدارة.
         </p>
 
-      </form>
+      </div>
 
-    </section>
+      <a
+        class="btn btn-primary"
+        href="#teachers">
+        استكشف المدرسين
+      </a>
+
+    </div>
+
+  </section>
 
 
-    <!-- لوحة الإدارة -->
+  <!-- TEACHERS -->
 
-    <section
-      id="adminSection"
-      class="section"
+  <section
+    class="section"
+    id="teachers">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          المحتوى
+        </span>
+
+        <h2>
+          المدرسون
+        </h2>
+
+      </div>
+
+      <p id="resultsText">
+        جاري تحميل المدرسين...
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <select
+        id="subjectFilter"
+        aria-label="المادة">
+
+        <option value="">
+          كل المواد
+        </option>
+
+      </select>
+
+
+      <select
+        id="gradeFilter"
+        aria-label="الصف">
+
+        <option value="">
+          كل الصفوف
+        </option>
+
+      </select>
+
+
+      <button
+        class="btn btn-small btn-outline"
+        id="clearFilters">
+
+        إلغاء الفلاتر
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="teacher-grid"
+      id="teacherGrid">
+    </div>
+
+
+    <div
+      class="empty"
+      id="emptyState"
       hidden>
 
-      <div class="section-heading">
+      <div class="empty-icon">
+        ⌕
+      </div>
 
-        <div>
-          <span class="eyebrow">مسار</span>
-          <h2>مرحبًا بك في لوحة الإدارة</h2>
-        </div>
+      <h3>
+        لم نجد نتائج
+      </h3>
 
-        <button
-          id="logoutBtn"
-          class="btn btn-outline">
-          تسجيل الخروج
-        </button>
+      <p>
+        جرّب كلمة بحث أو مادة أو صفًا مختلفًا.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUBJECTS -->
+
+  <section
+    class="section alt"
+    id="subjects">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="eyebrow">
+          استكشف
+        </span>
+
+        <h2>
+          المواد التعليمية
+        </h2>
 
       </div>
 
-
-      <div class="bacc-banner">
-
-        <div>
-          <span class="pill">
-            لوحة الإدارة
-          </span>
-
-          <h3>
-            إدارة المدرسين
-          </h3>
-
-          <p>
-            من هنا سنضيف المدرسين ومعلوماتهم إلى منصة مسار.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
+    </div>
 
 
-  <!-- Supabase -->
+    <div
+      class="subject-grid"
+      id="subjectGrid">
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-  <script>
-
-    const SUPABASE_URL =
-      "https://meftmrgkqvdvurvrkrkc.supabase.co";
-
-    const SUPABASE_KEY =
-      "sb_publishable_IFLpHM_wfabV4dYtQXRTiA_CjFm-a5j";
+  </section>
 
 
-    const supabaseClient =
-      supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-      );
+  <!-- CTA -->
+
+  <section class="section cta">
+
+    <div>
+
+      <span class="eyebrow">
+        مسار
+      </span>
+
+      <h2>
+        كل خطوة تعليمية تبدأ بمسار واضح.
+      </h2>
+
+      <p>
+        منصة تعليمية قابلة للتوسع لإضافة الاختبارات والملفات والواجبات.
+      </p>
+
+    </div>
+
+    <a
+      class="btn btn-light"
+      href="#teachers">
+      ابدأ من المدرسين
+    </a>
+
+  </section>
+
+</main>
 
 
-    const loginForm =
-      document.getElementById("loginForm");
+<footer>
 
-    const loginSection =
-      document.getElementById("loginSection");
+  <div class="footer-brand">
+    <span class="brand-mark">م</span>
+    <strong>مسار</strong>
+  </div>
 
-    const adminSection =
-      document.getElementById("adminSection");
+  <p>
+    مقدمة من م / معاذ أيمن عبد ربه
+  </p>
 
-    const loginMessage =
-      document.getElementById("loginMessage");
+  <p>
+    إلى جميع طلبة الجمهورية العربية المصرية
+  </p>
 
-    const logoutBtn =
-      document.getElementById("logoutBtn");
+  <p class="footer-note">
+    منصة تعليمية مستقلة. يجب احترام حقوق أصحاب المحتوى وروابط YouTube الرسمية.
+  </p>
 
-
-    async function checkSession() {
-
-      const {
-        data: {
-          session
-        }
-      } = await supabaseClient.auth.getSession();
+</footer>
 
 
-      if (session) {
+<!-- MODAL -->
 
-        loginSection.hidden = true;
+<div
+  class="modal"
+  id="teacherModal"
+  hidden>
 
-        adminSection.hidden = false;
+  <div
+    class="modal-backdrop"
+    data-close="true">
+  </div>
 
-      }
+  <article class="modal-card">
 
-    }
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="إغلاق">
 
+      ×
 
-    loginForm.addEventListener(
-      "submit",
-      async (event) => {
+    </button>
 
-        event.preventDefault();
+    <div id="modalContent"></div>
 
+  </article>
 
-        const email =
-          document.getElementById("email").value.trim();
-
-        const password =
-          document.getElementById("password").value;
-
-
-        loginMessage.textContent =
-          "جاري تسجيل الدخول...";
-
-
-        const {
-          data,
-          error
-        } =
-          await supabaseClient.auth.signInWithPassword({
-            email,
-            password
-          });
+</div>
 
 
-        if (error) {
+<!-- SUPABASE -->
 
-          loginMessage.textContent =
-            "فشل تسجيل الدخول: " + error.message;
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-          return;
-
-        }
-
-
-        if (data.session) {
-
-          loginSection.hidden = true;
-
-          adminSection.hidden = false;
-
-          loginMessage.textContent = "";
-
-        }
-
-      }
-    );
-
-
-    logoutBtn.addEventListener(
-      "click",
-      async () => {
-
-        await supabaseClient.auth.signOut();
-
-        adminSection.hidden = true;
-
-        loginSection.hidden = false;
-
-        loginForm.reset();
-
-      }
-    );
-
-
-    checkSession();
-
-  </script>
+<script src="app.js"></script>
 
 </body>
 </html>
