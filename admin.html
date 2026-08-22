@@ -8,453 +8,260 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-
-  <style>
-    .admin-page {
-      max-width: 1100px;
-      margin: auto;
-      padding: 45px 5%;
-    }
-
-    .admin-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 25px;
-    }
-
-    .admin-box {
-      background: #fff;
-      border: 1px solid #dfe6d8;
-      border-radius: 20px;
-      padding: 24px;
-      margin-bottom: 20px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    .field input,
-    .field textarea,
-    .field select {
-      border: 1px solid #ccd5c4;
-      border-radius: 10px;
-      padding: 10px;
-      background: #fff;
-      outline: 0;
-      font-family: inherit;
-    }
-
-    .field textarea {
-      min-height: 90px;
-      resize: vertical;
-    }
-
-    .admin-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .admin-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      padding: 15px;
-      border: 1px solid #e0e6dc;
-      border-radius: 14px;
-    }
-
-    .danger {
-      border-color: #c98d8d;
-      color: #8d3333;
-      background: #fff;
-    }
-
-    .success {
-      background: #eaf1e3;
-      color: #3f4f2f;
-      padding: 10px 14px;
-      border-radius: 10px;
-      display: none;
-      margin-bottom: 15px;
-    }
-
-    .help {
-      font-size: 13px;
-      color: #6c746e;
-    }
-
-    @media(max-width:700px) {
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .admin-top {
-        display: block;
-      }
-
-      .admin-item {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-  </style>
-
-  <!-- Supabase -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
 
-  <header class="navbar">
+  <main class="section">
 
-    <a class="brand" href="index.html">
-      <span class="brand-mark">م</span>
-      <span>مسار</span>
-    </a>
-
-    <nav class="nav-links" style="display:flex">
-      <a href="index.html">العودة للموقع</a>
-    </nav>
-
-  </header>
-
-
-  <main class="admin-page">
-
-    <div class="admin-top">
-
+    <div class="section-heading">
       <div>
+        <span class="eyebrow">مسار</span>
+        <h1>لوحة الإدارة</h1>
+      </div>
 
-        <span class="eyebrow">
-          لوحة الإدارة
-        </span>
+      <a class="btn btn-outline" href="index.html">
+        العودة للمنصة
+      </a>
+    </div>
 
-        <h1 style="margin:0;color:#27341f">
-          إدارة المدرسين والمحتوى
-        </h1>
+
+    <!-- تسجيل الدخول -->
+
+    <section id="loginSection" class="section alt">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">الإدارة</span>
+          <h2>تسجيل الدخول</h2>
+        </div>
+
+        <p>
+          الدخول مخصص لفريق إدارة منصة مسار.
+        </p>
+      </div>
+
+      <form id="loginForm" style="max-width:500px;margin:auto;">
+
+        <label for="email">
+          البريد الإلكتروني
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          required
+          placeholder="البريد الإلكتروني"
+          style="width:100%;padding:12px;margin:8px 0 18px;"
+        >
+
+
+        <label for="password">
+          كلمة المرور
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          required
+          placeholder="كلمة المرور"
+          style="width:100%;padding:12px;margin:8px 0 18px;"
+        >
+
+
+        <button
+          class="btn btn-primary"
+          type="submit">
+          تسجيل الدخول
+        </button>
+
+        <p
+          id="loginMessage"
+          style="margin-top:15px;">
+        </p>
+
+      </form>
+
+    </section>
+
+
+    <!-- لوحة الإدارة -->
+
+    <section
+      id="adminSection"
+      class="section"
+      hidden>
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">مسار</span>
+          <h2>مرحبًا بك في لوحة الإدارة</h2>
+        </div>
+
+        <button
+          id="logoutBtn"
+          class="btn btn-outline">
+          تسجيل الخروج
+        </button>
 
       </div>
 
-      <a
-        class="btn btn-primary"
-        href="index.html"
-      >
-        فتح الموقع
-      </a>
 
-    </div>
+      <div class="bacc-banner">
 
+        <div>
+          <span class="pill">
+            لوحة الإدارة
+          </span>
 
-    <div class="admin-box">
+          <h3>
+            إدارة المدرسين
+          </h3>
 
-      <h2>
-        إدارة منصة مسار
-      </h2>
-
-      <p class="help">
-        من هنا يمكنك إضافة المدرسين وإدارة محتوى المنصة.
-      </p>
-
-    </div>
-
-
-    <div
-      id="message"
-      class="success"
-    ></div>
-
-
-    <!-- إضافة مدرس -->
-
-    <section class="admin-box">
-
-      <h2>
-        إضافة مدرس
-      </h2>
-
-      <form id="teacherForm">
-
-        <div class="form-grid">
-
-
-          <label class="field">
-
-            <span>
-              اسم المدرس *
-            </span>
-
-            <input
-              id="name"
-              required
-            >
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              المادة *
-            </span>
-
-            <input
-              id="subject"
-              required
-            >
-
-          </label>
-
-
-          <!-- المرحلة -->
-
-          <label class="field">
-
-            <span>
-              المرحلة
-            </span>
-
-            <select id="stage">
-
-              <option value="secondary">
-                الثانوية العامة المصرية
-              </option>
-
-              <option value="baccalaureate">
-                البكالوريا المصرية
-              </option>
-
-              <option value="both">
-                كلاهما معًا
-              </option>
-
-            </select>
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              الصفوف
-            </span>
-
-            <input
-              id="grades"
-              placeholder="الصف الثاني الثانوي, الصف الثالث الثانوي"
-            >
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              رابط صورة المدرس
-            </span>
-
-            <input
-              id="image"
-              type="url"
-              placeholder="https://..."
-            >
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              رابط قناة YouTube
-            </span>
-
-            <input
-              id="youtubeChannel"
-              type="url"
-              placeholder="https://www.youtube.com/..."
-            >
-
-          </label>
-
-
-          <label class="field full">
-
-            <span>
-              نبذة مختصرة
-            </span>
-
-            <textarea
-              id="bio"
-            ></textarea>
-
-          </label>
-
-
+          <p>
+            من هنا سنضيف المدرسين ومعلوماتهم إلى منصة مسار.
+          </p>
         </div>
 
-
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          إضافة المدرس
-        </button>
-
-      </form>
+      </div>
 
     </section>
-
-
-    <!-- المدرسون الحاليون -->
-
-    <section class="admin-box">
-
-      <h2>
-        المدرسون الحاليون
-      </h2>
-
-      <div
-        id="adminList"
-        class="admin-list"
-      ></div>
-
-    </section>
-
-
-    <!-- إضافة درس -->
-
-    <section class="admin-box">
-
-      <h2>
-        إضافة درس لمدرس
-      </h2>
-
-      <form id="lessonForm">
-
-        <div class="form-grid">
-
-
-          <label class="field">
-
-            <span>
-              المدرس *
-            </span>
-
-            <select
-              id="teacherSelect"
-              required
-            ></select>
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              عنوان الدرس *
-            </span>
-
-            <input
-              id="lessonTitle"
-              required
-            >
-
-          </label>
-
-
-          <label class="field full">
-
-            <span>
-              وصف الدرس
-            </span>
-
-            <textarea
-              id="lessonDescription"
-            ></textarea>
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              رابط YouTube
-            </span>
-
-            <input
-              id="lessonUrl"
-              type="url"
-              placeholder="https://www.youtube.com/watch?v=..."
-            >
-
-          </label>
-
-
-          <label class="field">
-
-            <span>
-              رابط الصورة المصغرة
-            </span>
-
-            <input
-              id="thumbnail"
-              type="url"
-              placeholder="https://..."
-            >
-
-          </label>
-
-
-        </div>
-
-
-        <button
-          class="btn btn-primary"
-          type="submit"
-        >
-          إضافة الدرس
-        </button>
-
-      </form>
-
-    </section>
-
 
   </main>
 
 
-  <!-- ملفات JavaScript -->
+  <!-- Supabase -->
 
-  <script src="supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <script src="admin.js"></script>
+
+  <script>
+
+    const SUPABASE_URL =
+      "https://meftmrgkqvdvurvrkrkc.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_IFLpHM_wfabV4dYtQXRTiA_CjFm-a5j";
+
+
+    const supabaseClient =
+      supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const loginSection =
+      document.getElementById("loginSection");
+
+    const adminSection =
+      document.getElementById("adminSection");
+
+    const loginMessage =
+      document.getElementById("loginMessage");
+
+    const logoutBtn =
+      document.getElementById("logoutBtn");
+
+
+    async function checkSession() {
+
+      const {
+        data: {
+          session
+        }
+      } = await supabaseClient.auth.getSession();
+
+
+      if (session) {
+
+        loginSection.hidden = true;
+
+        adminSection.hidden = false;
+
+      }
+
+    }
+
+
+    loginForm.addEventListener(
+      "submit",
+      async (event) => {
+
+        event.preventDefault();
+
+
+        const email =
+          document.getElementById("email").value.trim();
+
+        const password =
+          document.getElementById("password").value;
+
+
+        loginMessage.textContent =
+          "جاري تسجيل الدخول...";
+
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+          });
+
+
+        if (error) {
+
+          loginMessage.textContent =
+            "فشل تسجيل الدخول: " + error.message;
+
+          return;
+
+        }
+
+
+        if (data.session) {
+
+          loginSection.hidden = true;
+
+          adminSection.hidden = false;
+
+          loginMessage.textContent = "";
+
+        }
+
+      }
+    );
+
+
+    logoutBtn.addEventListener(
+      "click",
+      async () => {
+
+        await supabaseClient.auth.signOut();
+
+        adminSection.hidden = true;
+
+        loginSection.hidden = false;
+
+        loginForm.reset();
+
+      }
+    );
+
+
+    checkSession();
+
+  </script>
 
 </body>
 </html>
-
